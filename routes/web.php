@@ -2,7 +2,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController as PageController;
+use App\Http\Controllers\Guest\PageController as PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +14,6 @@ use App\Http\Controllers\PageController as PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('movies.index');
-});
 
-Route::get('/movies', [PageController::class, 'index'])->name('movies_show');
+Route::get('/', [PageController::class, 'index'])->name('movies');
 
